@@ -36,21 +36,40 @@ def checkogin():
                 return render_template("login.html", check = "Password wrong")
         else:
             return render_template("login.html", check = "Account doesnt exist")
-
-
-        
     
 @app.route("/signup", methods = ["GET","POST"])
 def signup():
     if request.method == "GET":
         return render_template("signup.html")
     else:
-        information()
+        check()
         return render_template("signup.html")
+@app.route("/information", methods = ["GET","POST"])   
+def check():
+    print("please work")
+    global username, password
+    fileDir = os.path.dirname(os.path.realpath("__file__"))
+    username = request.form.get("username")
+    password = request.form.get("password")
+    print("I do in fact work ")
+    if username == "" or password == "":
+        return render_template("signup.html")
+    else:
+        checklen = len(password)
+        if checklen < 6:
+            return render_template("signup.html")
+        else:
+            filename = username + ".doc"
+            fileexist = bool(path.exists(filename))
+            if fileexist == True:
+                print("works")
+                return render_template("login.html", check = "Login already exists, please login")
+            else:
+                admin = open(filename, "x")
+                print("file created")
+                admin.write(username + "\n" + password)
+                admin.close()
 
-    
-@app.route("/signupinformation", methods = ["GET","POST"])
-def information():
     return render_template("information.html")
 
 if __name__ == "__main__":
