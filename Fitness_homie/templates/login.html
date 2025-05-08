@@ -8,11 +8,11 @@
 			<u><h2>Log in</h2></u>	
 			<table> 
 				<tr> 
-					<td id = "label"><label id = "user">Username: </label></td> 
-					<td id = "input"><input id = "username" name = "username" autofocus ></input><br></td> 
+					<td id = "label"><label id = "user">Username: </label></td><br>
+					<td id = "input" style="width:250px;"><input id = "username" name = "username" autofocus ></input><br></td> 
 				</tr> 
 				<tr>
-					<td id = "label"><label id = "pass">Password: </label> </td> 
+					<td id = "label"><label id = "pass">Password: </label> </td><br>
 					<td id = "input"><input id = "password" name = "password"></input></td>
 				</tr>
 				<tr> 
@@ -22,7 +22,7 @@
 					<td id = "check"><label style = "color:red">{{check}}</label>
 				</tr>
 				<tr> 
-					<td><a id = "signup" href = "{{url_for('signup')}}">Signup Here</a></td>
+					<td><a id = "signup" colspan="2" href = "{{url_for('signup')}}">Signup Here</a></td>
 				</tr> 
 				
 			</table>
