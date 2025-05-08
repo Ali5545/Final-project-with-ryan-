@@ -26,10 +26,10 @@ def checkogin():
         fileexist = bool(path.exists(filename))
         if fileexist == True:
             admin = open(filename, "r")
-            adminvalue = admin.read().striplines()
-
-            checkuser = adminvalue.strip(0)
-            checkpassword = adminvalue.strip(1)
+            adminvalue = admin.read().splitlines()
+            length = len(adminvalue)
+            checkuser = adminvalue[0].strip()
+            checkpassword = adminvalue[1].strip()
             if username == checkuser and password == checkpassword:
                 return render_template("main.html")
             else:
