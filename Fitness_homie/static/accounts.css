@@ -1,1 +1,12 @@
-css
+table, td, tr 
+{
+	border:2px solid black;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 250px;
+}
+body
+{
+	text-align: center;
+}
