@@ -5,8 +5,11 @@
 	</head>	
 	<body> 
 		<form method = "Post" action = "/information">
-			<u><h2>Sign up</h2></u>	
 			<table> 
+				<tr>
+					<img src="static/FitnessHomie.png"></img>
+					<u><h2>Sign up</h2></u>
+				</tr>
 				<tr> 
 					<td id = "label"><label id = "user">Username: </label></td> 
 					<td id = "input"><input id = "username" name = "username" autofocus ></input><br></td> 
@@ -16,14 +19,14 @@
 					<td id = "input"><input id = "password" name = "password"></input></td>
 				</tr>
 				<tr> 
-					<td id = "button"><button id = "submit">Sign in</button></td>
+					<td id = "button" ><button id = "submit" style="width: 150px;">Sign in</button></td>
 				</tr>
 				<tr> 
-					<td id = "check"><label style = "color:red">{{check}}</label>
-				</tr>
-				<tr> 
-					<td><a id = "signup" href = "{{url_for('main')}}">Login Here</a></td>
+					<td><a id = "signup" colspan="2" href = "{{url_for('main')}}">Login Here</a></td>
 				</tr> 
+				<tr> 
+					<td id = "check" colspan="2" ><label style = "color:red">{{check}}</label>
+				</tr>
 			</table>
 		</form> 		
 	</body>
