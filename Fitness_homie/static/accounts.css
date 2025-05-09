@@ -1,11 +1,12 @@
-table, td, tr 
+table
 {
 	border:2px solid black;
+	border-radius: 15px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	padding-right: auto;
-	padding-left: auto;
+	height: 200px; 
+	padding: 1%;
 }
 body
 {
@@ -15,8 +16,31 @@ body
 table
 {
 	zoom: 150%;
+	background-color: white;
 }
 img
 {
 	zoom: 65%;
+}
+button
+{
+	background-color: white;
+	transition-duration: 0.3s;
+	font-size:15px;
+}	
+button:hover
+{
+	background-color: lightblue;
+}	
+#signup
+{
+	font-size: 15px;
+}
+input
+{
+	height: 20px;
+}
+td
+{
+	height: 30px;
 }
