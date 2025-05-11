@@ -7,9 +7,11 @@ table
 	margin-right: auto;
 	height: 200px; 
 	padding: 1%;
+	width: 40%; 
 }
 body
 {
+	font-family: Candara;
 	text-align: center;
 	background-color: lightblue;
 }
@@ -24,9 +26,12 @@ img
 }
 button
 {
+	border-radius: 15px;
 	background-color: white;
 	transition-duration: 0.3s;
 	font-size:15px;
+	font-family: Candara;
+	height: 35px;
 }	
 button:hover
 {
@@ -43,4 +48,8 @@ input
 td
 {
 	height: 30px;
+}
+h2
+{
+	font-size: 35px; 
 }
