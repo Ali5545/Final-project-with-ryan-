@@ -43,6 +43,7 @@ button:hover
 }
 input
 {
+	font-family: Candara;
 	height: 20px;
 }
 td
@@ -52,4 +53,12 @@ td
 h2
 {
 	font-size: 35px; 
+}
+a
+{
+	transition-duration: 0.3s; 
+}
+a:hover
+{
+	color: lightblue;
 }
