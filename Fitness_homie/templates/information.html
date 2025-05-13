@@ -8,13 +8,29 @@
 			<u><h2>Information page</h2></u>	
 			<table> 
 				<tr> 
-					<td><a id = "signup" href = "{{url_for('signup')}}">Signup Here</a></label>
+					<td><label> What is your age? </label></td>
+					<td><input id = "age" name = "age" ></input></td>
+				</tr>
+				<tr>
+					<td><label> What is your height in Feet and Inches? </label></td> 
+					<td><input id = "height" name = "height"></input></td>
+				</tr>
+				<tr>
+					<td><label> What is your current weight? </label></td> 
+					<td><input id = "height" name = "height"></input></td>
 				</tr>
 				<tr> 
-					<td><a id = "signup" href = "{{url_for('main')}}">Login Here</a></td>
+					<td><label> What is your goal? </label></td>
+					<td><select name="goal" id="goal">
+							<option>Lose weight/Fat</option>
+							<option> Gain muscle/Weight</option>
+						</select>
+					</td>
+				</tr>
+				<tr> 
+					<td><button id = "Submit">Submit</button></td>
 				</tr> 
 			</table>
 		</form> 		
 	</body>
-
 </html>
