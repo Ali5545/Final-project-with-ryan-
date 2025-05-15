@@ -40,3 +40,10 @@ h1
 {
 	box-shadow: 0 20px 30px 0 rgb(99, 99, 99), 0 20px 51px 0 rgb(99, 99, 99);
 }
+table
+{
+	zoom: 150%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
