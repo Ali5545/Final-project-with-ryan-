@@ -116,9 +116,10 @@ def check2():
                     return render_template("information.html", check = "You must type in a number for your weight!")
         height = int(feet) * 12 + int(inches)
         if gender == "Man":
-            Bmr = 66.47 + 6.24 * int(weight) + 12.7 * int(height) - 6.755 * int(age)
+            print("man")
+            Bmr = 66.47 + (6.24 * int(weight) )+ (12.7 * int(height)) - (6.76 * int(age))
         else:
-            Bmr = 655.1 + 4.35 * int(weight) + 4.7 * int(height) - 4.7 * int(age)
+            Bmr = 655 + (4.34 * int(weight)) + (4.7 * int(height)) - (4.7 * int(age))
 
         if goal == "Lose weight/Fat" :
             Cal_intake = round(Bmr) - 300
