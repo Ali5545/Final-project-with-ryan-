@@ -4,7 +4,7 @@
 		<script src = "/static/information.js"></script>
 	</head>	
 	<body> 
-		<form action = "/mainpage" method = "Post">
+		<form action = "/infohome" method = "Post">
 			<u><h2>Information page</h2></u>	
 			<table> 
 				<tr> 
@@ -13,22 +13,40 @@
 				</tr>
 				<tr>
 					<td><label> What is your height in Feet and Inches? </label></td> 
-					<td><input id = "height" name = "height"></input></td>
+					<td>
+						<label>Feet: </label><input id = "Feet" name = "Feet"></input>
+						<label>Inches: </label><input id = "Inches" name = "Inches"></input>
+					</td>
 				</tr>
 				<tr>
 					<td><label> What is your current weight? </label></td> 
-					<td><input id = "height" name = "height"></input></td>
+					<td><input id = "weight" name = "weight"></input></td>
 				</tr>
 				<tr> 
 					<td><label> What is your goal? </label></td>
-					<td><select name="goal" id="goal">
+					<td>
+						<select name="goal" id="goal">
 							<option>Lose weight/Fat</option>
 							<option> Gain muscle/Weight</option>
 						</select>
 					</td>
 				</tr>
 				<tr> 
-					<td><button id = "Submit">Submit</button></td>
+					<td><label> What is your Gender? </label></td>
+					<td>
+						<select name="gender" id="gender">
+							<option>Man</option>
+							<option>Woman</option>
+						</select>
+					</td>
+				</tr>
+				<tr> 
+					<td> 
+						<label style = "color:red;">{{check}}</label>
+					</td>
+				</tr>
+				<tr>
+					<td><button type = "submit" id = "click" name = "click" value = "Submit"></button></td>
 				</tr> 
 			</table>
 		</form> 		
