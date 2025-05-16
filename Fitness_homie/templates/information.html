@@ -4,18 +4,26 @@
 		<script src = "/static/information.js"></script>
 	</head>	
 	<body> 
-		<form action = "/infohome" method = "Post">
-			<u><h2>Information page</h2></u>	
+        <div id = "heading">
+			<img src = "/static/FitnessHomie.png" height = "auto" width = "8%" id = "logo"></img>
+            <u><h1>User information</h1></u>
+        </div>
+		<form action = "/infohome" method = "Post">	
 			<table> 
 				<tr> 
 					<td><label> What is your age? </label></td>
-					<td><input id = "age" name = "age" ></input></td>
+					<td><input id = "age" name = "age" autofocus></input></td>
 				</tr>
 				<tr>
-					<td><label> What is your height in Feet and Inches? </label></td> 
-					<td>
-						<label>Feet: </label><input id = "Feet" name = "Feet"></input>
-						<label>Inches: </label><input id = "Inches" name = "Inches"></input>
+					<td><label> What is your height? </label></td> 
+					<td style = "width: 20%;">
+						<label>Ft: </label><input id = "Feet" name = "Feet"></input>
+					</td>
+				</tr> 
+				<tr>
+					<td><label></label></td> 
+					<td> 
+						<label>In: </label><input id = "Inches" name = "Inches"></input>
 					</td>
 				</tr>
 				<tr>
@@ -40,13 +48,13 @@
 						</select>
 					</td>
 				</tr>
+				<tr>
+					<td><button type = "submit" id = "click" name = "click" value = "Submit">Submit</button></td>
+				</tr> 
 				<tr> 
 					<td> 
 						<label style = "color:red;">{{check}}</label>
 					</td>
-				</tr>
-				<tr>
-					<td><button type = "submit" id = "click" name = "click" value = "Submit">Submit</button></td>
 				</tr> 
 			</table>
 		</form> 		
