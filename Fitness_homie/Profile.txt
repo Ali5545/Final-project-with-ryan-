@@ -1,1 +1,1 @@
-Username, Password, Email, Age, Height, Weight, Goal, Gender, Base Calories, Goal Calories
+Username, Password, Email, Age, Height(Inches), Weight, Goal, Gender, Base Calories, Goal Calories

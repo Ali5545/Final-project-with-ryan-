@@ -137,6 +137,23 @@ def home():
 
 @app.route("/profile", methods = ["GET", "POST"])
 def profile():
-    return render_template("main.html")
+    filename1 = "Profile.txt"
+    filename2 = username + ".doc"
+
+    admin1 = open(filename1, "r")
+    admin1value = admin1.read().split(",")
+    length = len(admin1value)
+    admin1.close()
+
+    admin2 = open(filename2, "r")
+    admin2value = admin2.read().splitlines()
+    admin2.close()
+    
+    return render_template("profile.html", length = length, Category = admin1value, information = admin2value )
+@app.route("/macro_tracker", methods = ["GET", "POST"])
+def macro_tracker():
+    return render_template("macro_tracker.html")
+
+
 if __name__ == "__main__":
     app.run()

@@ -43,11 +43,28 @@ h1
 table
 {
 	border:2px solid black;
-	border-radius: 15px;
+	border-radius: 25px;
 	text-align: center;
 	margin-left: auto;
-	margin-right: auto;
-	height: 200px; 
-	padding: 1%;
-	width: 40%; 
+	margin-right: auto; 
+	padding: 2%;
+	width: 45%; 
+	margin-bottom: 5%;
+}
+td
+{
+	width: 22.5%;
+}
+#image
+{
+	border: 2px solid black; 
+	border-radius: 50%; 
+}
+h2 
+{
+	transition-duration: 0.3s;
+}
+h2:hover
+{
+	text-decoration: underline;
 }
