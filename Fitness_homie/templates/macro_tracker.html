@@ -1,3 +1,4 @@
+
 <html>
 	<head>
 		<link href = "/static/macro_tracker.css" rel = "stylesheet"></link>
@@ -14,18 +15,33 @@
 			<a>
         </div>	
 		<div id ="body">
-			<table>
-				<tr>
-				<td><input type="text" id="foodnam"></td>
-				</tr>
-				<tr>
-				<td><input type="text" id="carbnum"></td>
-				</tr>
-				<tr>
-				<td><input type="text" id="proteinnum"></td>
-				</tr>
-				<tr>
-				<td><input type="text" id="fatnum"></td>
-				</tr>
+			<form method = "Post">
+				<table>
+					<tr>
+						<td><label>Food Name: </label></td>
+						<td><input type="text" id="foodname" name = "foodname"></td>
+					</tr>
+					<tr> 
+						<td><label>Calories: </label></td>
+						<td><input type="text" id="calorie" name = "calorie"></td>
+					</tr>
+					<tr>
+						<td><label>Input the Carbs(Grams): </label></td>
+						<td><input type="text" id="carbnum" name = "carbnum"></td>
+					</tr>
+					<tr>
+						<td><label>Input the Protein(Grams): </label></td>
+						<td><input type="text" id="proteinnum" name = "proteinnum"></td>
+					</tr>
+					<tr>
+						<td><label>Input the Fats(Grams): </label></td>
+						<td><input type="text" id="fatnum" name = "fatnum"></td>
+					</tr>
+					<tr> 
+						<td><button id = "submit" name = "submit"> Input Values </button></td>
+					</tr>
+				</table> 
+			</form>
+		</div>
 	</body>
 </html>
