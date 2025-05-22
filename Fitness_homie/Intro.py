@@ -153,6 +153,9 @@ def profile():
 @app.route("/macro_tracker", methods = ["GET", "POST"])
 def macro_tracker():
     return render_template("macro_tracker.html")
+    protein = 4 calories
+    fat= 9 calories
+    carbs= 4 calories
 
 
 if __name__ == "__main__":
