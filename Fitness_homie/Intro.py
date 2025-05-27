@@ -31,7 +31,7 @@ def checkogin():
             checkuser = adminvalue[0].strip()
             checkpassword = adminvalue[1].strip()
             if username == checkuser and password == checkpassword:
-                return render_template("main.html")
+                return home()
             else:
                 return render_template("login.html", check = "Password or username wrong")
         else:
@@ -79,6 +79,7 @@ def check():
                         admin4 = open(filename4, "x")
                         admin4.close()
                         admin5 = open(filename5, "x")
+                        admin5.write("0" + "\n" + "0" + "\n" + "0" + "\n" + "0")
                         admin5.close()
             return render_template("information.html")    
     else:
@@ -116,7 +117,6 @@ def check2():
                     return render_template("information.html", check = "You must type in a number for your weight!")
         height = int(feet) * 12 + int(inches)
         if gender == "Man":
-            print("man")
             Bmr = 66.47 + (6.24 * int(weight) )+ (12.7 * int(height)) - (6.76 * int(age))
         else:
             Bmr = 655 + (4.34 * int(weight)) + (4.7 * int(height)) - (4.7 * int(age))
@@ -127,13 +127,41 @@ def check2():
             Cal_intake = round(Bmr) + 300
         filename = username + ".doc"
         admin = open(filename, "a")
-        admin.write("\n" + str(age) + "\n" + str(height) + "\n" + str(weight) + "\n" + str(goal) + "\n" + str(gender) + "\n" + str(Bmr) + "\n" + str(Cal_intake))
+        admin.write("\n" + str(age) + "\n" + str(height) + "\n" + str(weight) + "\n" + str(goal) + "\n" + str(gender) + "\n" + str(round(Bmr)) + "\n" + str(Cal_intake))
         admin.close()            
-        return render_template("main.html")
-           
+        return home()
+        
 @app.route("/home", methods = ["GET", "POST"])
 def home():
-    return render_template("main.html")
+    print("works")
+    filename1 = username + ".doc"
+    filename2 = username + "food" + ".doc"
+    
+    admin = open(filename1, "r")
+    adminvalue = admin.read().splitlines()
+    admin.close()
+    base_cal = adminvalue[9].strip()
+    base_carbs = round((float(base_cal) * float(0.45)) / 4)
+    base_protein = round((float(base_cal) * float(0.25)) /4)
+    base_fat = round((float(base_cal) * float(0.30))/9)
+
+    admin2 = open(filename2 , "r")
+    admin2value = admin2.read().splitlines()
+    admin2.close()
+
+    intake_cal = admin2value[0].strip()
+    intake_protein = admin2value[1].strip()
+    intake_carbs = admin2value[2].strip()
+    intake_fats = admin2value[3].strip()
+    
+    remaining_cal = int(base_cal) - int(intake_cal)
+    remaining_protein = int(base_protein) - int(intake_protein)
+    remaining_carbs = int(base_carbs) - int(intake_carbs)
+    remaining_fats = int(base_fat) - int(intake_fats)
+    
+    return render_template("main.html", caloriestotal = base_cal, calories = intake_cal, recommendedCals = remaining_cal,
+                           proteintotal = base_protein, proteins = intake_protein, recommendedPro = remaining_protein, carbsintake = base_carbs,
+                           carbs = intake_carbs, recommendedCarbs = remaining_carbs, fatintake = base_fat, fats = intake_fats, recommendedFats = remaining_fats)
 
 @app.route("/profile", methods = ["GET", "POST"])
 def profile():
@@ -152,10 +180,69 @@ def profile():
     return render_template("profile.html", length = length, Category = admin1value, information = admin2value )
 @app.route("/macro_tracker", methods = ["GET", "POST"])
 def macro_tracker():
-    return render_template("macro_tracker.html")
-    #protein = 4 calories
-    #fat= 9 calories
-    #carbs= 4 calories
+    new_total_cal = 0
+    new_total_pro = 0
+    new_total_carb = 0
+    new_total_fats = 0
+
+    filename = username + "food" + ".doc"
+    if request.method == "GET":           
+        return render_template("macro_tracker.html")
+    else:
+        button_press = request.form.get("submit")
+        match(button_press):
+            case "Input":
+                carbs = request.form.get("carbnum")
+                protein = request.form.get("proteinnum")
+                fats = request.form.get("fatnum")
+                foodname = request.form.get("foodname")
+                if carbs == "" or protein == "" or fats == "" or foodname == "":
+                    return render_template("macro_tracker.html")
+                else:
+                    list1 = list(carbs)
+                    for i in range(0, len(list1)):
+                        check1 = ord(list1[i])
+                        if check1 < 48 or check1 > 57:
+                            return render_template("macro_tracker.html")
+                    list2 = list(protein)
+                    for i in range(0,len(list2)):
+                        check2 = ord(list2[i])
+                        if check2 < 48 or check2 > 57:
+                            return render_template("macro_tracker.html")
+                    list3 = list(fats)
+                    for i in range(0,len(list3)):
+                        check3 = ord(list3[i])
+                        if check3 < 48 or check3 > 57:
+                            return render_template("macro_tracker.html")
+                    mealcal = (int(protein) * 4) + (int(carbs) * 4) + (int(fats) * 9)
+                    admin = open(filename, "r")
+                    adminvalue = admin.read().splitlines()
+                    admin.close()
+                    totalcal = adminvalue[0].strip()
+                    new_total_cal = int(totalcal) + mealcal
+
+                    total_pro = adminvalue[1].strip()
+                    new_total_pro = int(total_pro) + int(protein)
+
+                    total_carb = adminvalue[2].strip()
+                    new_total_carb = int(total_carb) + int(carbs)
+
+                    total_fats = adminvalue[3].strip()
+                    new_total_fats = int(total_fats) + int(fats) 
+
+                    admin2 = open(filename, "w")
+                    admin2.write(str(new_total_cal) + "\n" + str(new_total_pro) + "\n" + str(new_total_carb) + "\n" + str(new_total_fats))
+                    admin2.close()
+    
+                return render_template("macro_tracker.html", status = "Your macros have been updated!")
+            
+            case "newday":
+                admin = open(filename, "w")
+                admin.write("0" + "\n" + "0" + "\n" + "0" + "\n" + "0")
+                admin.close()
+                return render_template("macro_tracker.html", status = "You have started a new day!")
+            case default:
+                print("Something went wrong")
 
 
 if __name__ == "__main__":
