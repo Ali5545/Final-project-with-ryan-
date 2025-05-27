@@ -51,6 +51,10 @@ table
 	width: 80%; 
 	margin-bottom: 5%;
 }
+#macro
+{
+	width: 26.6%;
+}
 #image
 {
 	border: 2px solid black; 
