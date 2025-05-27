@@ -21,10 +21,6 @@
 						<td><label>Food Name: </label></td>
 						<td><input type="text" id="foodname" name = "foodname"></td>
 					</tr>
-					<tr> 
-						<td><label>Calories: </label></td>
-						<td><input type="text" id="calorie" name = "calorie"></td>
-					</tr>
 					<tr>
 						<td><label>Input the Carbs(Grams): </label></td>
 						<td><input type="text" id="carbnum" name = "carbnum"></td>
@@ -38,7 +34,13 @@
 						<td><input type="text" id="fatnum" name = "fatnum"></td>
 					</tr>
 					<tr> 
-						<td><button id = "submit" name = "submit"> Input Values </button></td>
+						<td><label style = "color: rgb(132, 251, 131);">{{status}}</label></td>
+					</tr>
+					<tr> 
+						<td><button id = "submit" name = "submit" value = "Input"> Input Values </button></td>
+					</tr>
+					<tr> 
+						<td><button id = "submit" name = "submit" value = "newday">Start Tracking New Day</button></td>
 					</tr>
 				</table> 
 			</form>
