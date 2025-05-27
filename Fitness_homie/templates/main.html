@@ -18,25 +18,29 @@
 				<td id = "data">
 				<table id="status">
 					<tr>
-						<td colspan = "2"> 
+						<td colspan = "3"> 
 							<h2>Your Macros</h2>
 						</td>
 					</tr>
 					<tr>
-						<td><label id="caloriein">Calorie Intake: {{calories}}</label></td>
-						<td><label id="calorieout">Calorie Remaining: {{recommendedCals}}</label></td>
+						<td id = "macro"><label id = "calorie_rec">Base Calorie Goal: <b>{{caloriestotal}}</b></label></td>
+						<td id = "macro"><label id="caloriein">Calorie Intake: <b>{{calories}}</b></label></td>
+						<td id = "macro"><label id="calorieout">Calories Remaining: <b>{{recommendedCals}}</b></label></td>
 					</tr>
 					<tr>
-						<td><label id="proteinin">Protein Intake: {{proteins}}</label></td>
-						<td><label id="proteinout">Protein Remaining: {{recommendedPro}}</label></td>
+						<td id = "macro"><label id = "protein">Base Protein Goal: <b>{{proteintotal}}</b></label></td>
+						<td id = "macro"><label id="proteinin">Protein Intake: <b>{{proteins}}</b></label></td>
+						<td id = "macro"><label id="proteinout">Protein Remaining: <b>{{recommendedPro}}</b></label></td>
 					</tr>
 					<tr>
-						<td><label id="carbin">Carbs Intake: {{carbs}}</label></td>
-						<td><label id="carbout">Carbs Remaining: {{recommendedCarbs}}</label></td>
+						<td id = "macro"><label id = "carbs">Base Carbs Goal: <b>{{carbsintake}}</b></label></td>
+						<td id = "macro"><label id="carbin">Carbs Intake: <b>{{carbs}}</b></label></td>
+						<td id = "macro"><label id="carbout">Carbs Remaining: <b>{{recommendedCarbs}}</b></label></td>
 					</tr>
 					<tr>
-						<td><label id="fatin">Fat Intake: {{fats}}</label></td>
-						<td><label id="fatout">Fat Remaining: {{recommendedFats}}</label></td>
+						<td id = "macro"><label id = "fats">Base Fats Goal: <b>{{fatintake}}</b></label></td>
+						<td id = "macro"><label id="fatin">Fat Intake: <b>{{fats}}</b></label></td>
+						<td id = "macro"><label id="fatout">Fats Remaining: <b>{{recommendedFats}}</b></label></td>
 					</tr>	
 			    </table>
 				</td>
