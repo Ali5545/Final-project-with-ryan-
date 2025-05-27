@@ -1,4 +1,6 @@
 
+
+
 <html>
 	<head>
 		<link href = "/static/macro_tracker.css" rel = "stylesheet"></link>
@@ -17,6 +19,7 @@
 		<div id ="body">
 			<form method = "Post">
 				<table>
+				<td><table>
 					<tr>
 						<td><label>Food Name: </label></td>
 						<td><input type="text" id="foodname" name = "foodname"></td>
@@ -42,7 +45,39 @@
 					<tr> 
 						<td><button id = "submit" name = "submit" value = "newday">Start Tracking New Day</button></td>
 					</tr>
-				</table> 
+				</table>
+				</td>
+				<td>
+				<table id="status">
+					<tr>
+						<td colspan = "3"> 
+							<h2>Your Macros</h2>
+						</td>
+					</tr>
+					<tr>
+						<td id = "macro"><label id = "calorie_rec">Base Calorie Goal: <b>{{caloriestotal}}</b></label></td>
+						<td id = "macro"><label id="caloriein">Calorie Intake: <b>{{calories}}</b></label></td>
+						<td id = "macro"><label id="calorieout">Calories Remaining: <b>{{recommendedCals}}</b></label></td>
+					</tr>
+					<tr>
+						<td id = "macro"><label id = "protein">Base Protein Goal: <b>{{proteintotal}}</b></label></td>
+						<td id = "macro"><label id="proteinin">Protein Intake: <b>{{proteins}}</b></label></td>
+						<td id = "macro"><label id="proteinout">Protein Remaining: <b>{{recommendedPro}}</b></label></td>
+					</tr>
+					<tr>
+						<td id = "macro"><label id = "carbs">Base Carbs Goal: <b>{{carbsintake}}</b></label></td>
+						<td id = "macro"><label id="carbin">Carbs Intake: <b>{{carbs}}</b></label></td>
+						<td id = "macro"><label id="carbout">Carbs Remaining: <b>{{recommendedCarbs}}</b></label></td>
+					</tr>
+					<tr>
+						<td id = "macro"><label id = "fats">Base Fats Goal: <b>{{fatintake}}</b></label></td>
+						<td id = "macro"><label id="fatin">Fat Intake: <b>{{fats}}</b></label></td>
+						<td id = "macro"><label id="fatout">Fats Remaining: <b>{{recommendedFats}}</b></label></td>
+					</tr>	
+			    </table>
+				</td>
+				</table>
+	
 			</form>
 		</div>
 	</body>
