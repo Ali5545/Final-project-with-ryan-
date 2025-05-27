@@ -40,3 +40,18 @@ h1
 {
 	box-shadow: 0 20px 30px 0 rgb(99, 99, 99), 0 20px 51px 0 rgb(99, 99, 99);
 }
+table, tr
+{
+	border:2px solid black;
+	border-radius: 25px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto; 
+	padding: 1%;
+	margin-bottom: 5%;
+	width: 80%;
+}
+tr
+{
+	zoom: 120%;
+}
