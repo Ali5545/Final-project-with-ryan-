@@ -329,6 +329,10 @@ def macro_tracker():
                 status = "macro_tracker"
                 return home()
         return which()
+@app.route("/workout_tracker", methods = ["GET", "POST"])
+def workout_tracker():
+    return render_template("workout_tracker.html")
+
 
 if __name__ == "__main__":
     app.run()
