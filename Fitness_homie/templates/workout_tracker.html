@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<link href = "/static/workout_tracker.css" rel = "stylesheet"></link>
+		<script src = "marco_tracker.js"></script>
+	</head>
+	<body> 
+		<a href = "{{url_for ('home')}}">
+			<img src = "/static/FitnessHomie.png" height = "auto" width = "8%" id = "logo"></img>
+		</a>
+        <div id = "heading">
+			<a href = "{{url_for('profile')}}" id = "hyperprofile">
+				<img src = "/static/profile.png" height = "auto" width = "8%" id = "profile"></img>
+			<a>
+        </div>
+		
+		<div id ="body">
+			<form method = "Post">
+				<table id = "all">
+				<td id = "data">
+				<table id = "tracker">
+					<tr><td colspan="11"><u><h2>Workout Tracker</h2></u></td></tr>
+					<tr>
+						<td><label>Exercise Name: </label></td>
+						<td><input type="text" id="exercise" name = "exercise" autofocus></td>
+					</tr>
+					<tr> 
+						<td><label>Input the Weight: </label></td>
+						<td><input type="text" id="Weight" name = "Weight" autofocus></td>
+					</tr>
+					<tr>
+						<td><label>Input the amount of sets: </label></td>
+						<td><input type="text" id="sets" name = "sets"></td>
+					</tr>
+					<tr>
+						<td><label>Input the amount of reps: </label></td>
+						<td><input type="text" id="reps" name = "reps"></td>
+					</tr>
+					<tr> 
+						<td><label style = "color: red;">{{status}}</label></td>
+					</tr>
+					<tr> 
+						<td><button id = "submit" name = "submit" value = "Input"> Input workout </button></td>
+					</tr>
+					<tr> 
+						<td><button id = "submit" name = "submit" value = "newday">Start Tracking New Day</button></td>
+					</tr>
+				</table>
+				</td>
+				
+				<td id = "data">
+				<table id="status">	
+					<tr>
+						<td id = "what"> 
+							<u><h2>Your workout today</h2></u>
+						</td>
+					</tr>
+					<tr> 
+						<td id = "what"> 
+							<label>Day: <b>{{day}}</b></label>
+						</td> 
+					</tr>
+					<tr> 
+						<td>
+							<ol>
+								{% for i in range(0,length)%}
+									<li> {{workout[i]}}</li>
+								{%endfor%}
+							</ol>		
+						</td>
+					</tr>
+			    </table>
+				</td>
+				</table>
+			</form>
+		</div>
+	</body> 
+</html>
