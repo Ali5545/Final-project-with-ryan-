@@ -1,0 +1,62 @@
+<html> 
+	<head>
+		<link href = "/static/information.css" rel = "stylesheet"></link> 
+		<script src = "/static/Javascript/information.js"></script>
+	</head>	
+	<body> 
+        <div id = "heading">
+			<img src = "/static/FitnessHomie.png" height = "auto" width = "8%" id = "logo"></img>
+            <u><h1>User information</h1></u>
+        </div>
+		<form action = "/infohome" method = "Post">	
+			<table> 
+				<tr> 
+					<td><label> What is your age? </label></td>
+					<td><input id = "age" name = "age" autofocus></input></td>
+				</tr>
+				<tr>
+					<td><label> What is your height? </label></td> 
+					<td style = "width: 20%;">
+						<input id = "Feet" name = "Feet" placeholder = "Ft"></input>
+					</td>
+				</tr> 
+				<tr>
+					<td><label></label></td> 
+					<td> 
+						<input id = "Inches" name = "Inches" placeholder = "In"></input>
+					</td>
+				</tr>
+				<tr>
+					<td><label> What is your current weight? </label></td> 
+					<td><input id = "weight" name = "weight"></input></td>
+				</tr>
+				<tr> 
+					<td><label> What is your goal? </label></td>
+					<td>
+						<select name="goal" id="goal">
+							<option>Lose weight/Fat</option>
+							<option> Gain muscle/Weight</option>
+						</select>
+					</td>
+				</tr>
+				<tr> 
+					<td><label> What is your Gender? </label></td>
+					<td>
+						<select name="gender" id="gender">
+							<option>Man</option>
+							<option>Woman</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><button type = "submit" id = "submit" name = "click">Submit</button></td>
+				</tr> 
+				<tr> 
+					<td> 
+						<label style = "color:red;">{{check}}</label>
+					</td>
+				</tr> 
+			</table>
+		</form> 		
+	</body>
+</html>
