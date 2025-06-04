@@ -1,0 +1,59 @@
+
+<html>
+	<head>
+	<link href = "/static/infoworkout.css" rel = "stylesheet"></link> 
+	</head>	
+	<body> 
+		<a href = "{{url_for ('home')}}">
+			<img src = "/static/Images/FitnessHomie.png" height = "auto" width = "8%" id = "logo"></img>
+		</a>
+        <div id = "heading">
+			<a href = "{{url_for('profile')}}" id = "hyperprofile">
+				<img src = "/static/Images/profile.png" height = "auto" width = "8%" id = "profile"></img>
+			<a>
+        </div>
+		<table> 
+			<td> 
+			<div id="body">
+				<u><h2 style = "text-align:center;">Workouts you can do</h2></u> 
+				<table id = "Chest">
+					{%for i in range (0,length1)%}
+					<tr>
+						<td><label id="inputname"> {{chest[i]}}</label></td>
+					</tr>
+					{%endfor%}
+				</table>
+				<table id = "Arm">
+					{%for i in range (0,length2)%}
+					<tr>
+						<td><label id="inputname"> {{arm[i]}}</label></td>
+					</tr>
+					{%endfor%}
+				</table>
+				<table id = "Back">
+					{%for i in range (0,length3)%}
+					<tr>
+						<td><label id="inputname"> {{back[i]}}</label></td>
+					</tr>
+					{%endfor%}
+				</table>
+				<table id = "Leg">
+					{%for i in range (0,length4)%}
+					<tr>
+						<td><label id="inputname"> {{leg[i]}}</label></td>
+					</tr>
+					{%endfor%}
+				</table>
+			</div>
+			</td> 
+			
+			<td> 
+			<div id = "moreinfo">
+				<u><h2 style = "text-align:center;">More workouts</h2></u> 
+			</div>
+			</td> 
+		</table>
+	</body>
+</html>
+		
+		
