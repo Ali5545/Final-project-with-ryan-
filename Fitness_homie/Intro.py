@@ -502,12 +502,17 @@ def workout_info():
                            length4 = length4, arm = admin2value, back =admin3value, leg = admin4value)
 
 def admin_page():
+    user_files = []
     filename = "usernames.txt"
     admin = open(filename, "r")
     adminvalue = admin.read().splitlines()
     admin.close()
     length = len(adminvalue)
     
+    for i in range(0,len(adminvalue)):
+        filename1 = adminvalue[i] + ".doc"
+        user_files.append(filename1)
+    print(user_files)
     return render_template("admin.html", length = length, usernames = adminvalue)
 if __name__ == "__main__":
     app.run()
