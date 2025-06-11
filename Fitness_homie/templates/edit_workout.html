@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<link href = "/static/edit.css" rel = "stylesheet"></link> 		
+	</head> 
+
+	<body>
+		<a href = "{{url_for ('admin_page')}}">
+			<img src = "/static/Images/FitnessHomie.png" height = "auto" width = "8%" id = "logo"></img>
+		</a>
+        <div id = "heading">
+			<u><h1 style = "text-align:center;">Edit Workout Information</h1></u>
+			<img src = "/static/Images/Sam2.png" height = "auto" width = "8%" id = "profile"></img>
+        </div>
+		<form method = "Post">
+			<table id = "everything"> 
+				<tr>
+					{% for i in range(0,length2)%}
+					<td id = "workouts"> 
+						{% set workout = groups[i] %}
+						<h2 style = "text-align:center;">{{names[i]}}</h2>
+						<table id = "Chest"> 
+							{% for i in range(0, groups[i]|length) %}
+								<tr style = "height: 25px;">
+									<td>
+										<label>{{workout[i]}}</label> 
+									</td> 
+								</tr>
+							{%endfor%}
+						</table> 
+					{%endfor%}
+					</td> 
+				</tr> 
+				<tr> 
+					<td colspan = "4" style = "text-align: center;">
+						<div id = "inputs">
+							<table style = "margin: auto;">
+								<tr > 
+									<td><label>Input the file you would like to change: </label></td>
+									<td><input name = "whichfile" id = "whichfile"></input><br></td>
+								</tr> 
+								<tr > 
+									<td><label>Delete Information(Type in a line number starting from 1!): </label></td>
+									<td><input name = "delete" id = "delete"></input><br></td>
+								</tr> 
+								<tr >
+									<td><button name = "submit" id = "submit" value = "delete">Delete</button><br></td>
+								</tr>
+								<tr>
+									<td><label>Add information (Type in what you would like to add): </label></td>
+									<td><input name = "add" id = "add"></input><br></td>
+								</tr> 
+								<tr>
+									<td><button name = "submit" id = "submit" value = "add">Add Information</button></td>
+								</tr>
+								<tr>
+									<td><label style = "color: red;">{{stat}}</label></td>
+								</tr>
+							</table>
+						</div> 
+					</td> 
+				</tr> 
+			</table> 
+	</body> 
+</html> 
