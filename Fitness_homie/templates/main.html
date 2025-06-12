@@ -1,0 +1,107 @@
+<html> 
+	<head>
+		<link href = "/static/main.css" rel = "stylesheet"></link> 
+	</head>	
+	<body> 		
+		<a href = "{{url_for ('home')}}">
+			<img src = "/static/Images/FitnessHomie.png" height = "auto" width = "8%" id = "logo"></img>
+		</a>
+        <div id = "heading">
+            <u><h1>Fitness Homie</h1></u>
+			<a href = "{{url_for('profile')}}" id = "hyperprofile">
+				<img src = "/static/Images/profile.png" height = "auto" width = "8%" id = "profile"></img>
+			<a>
+        </div>
+		<div id= "options">
+		<table id="everything">
+			<tr>
+				<td id = "data">
+				<table id="status">
+					<tr>
+						<td colspan = "3"> 
+							<h2>Your Macros</h2>
+						</td>
+					</tr>
+					<tr>
+						<td colspan = "3"> 
+							<label>Total meals for today: {{number}} </label>
+						</td>
+					</tr>
+					<tr> 
+						<td colspan = "3"> 
+							<label>Day: <b>{{day}}</b></label>
+						</td> 
+					</tr>
+					<tr>
+						<td id = "macro"><label id = "calorie_rec">Base Calorie Goal: <b>{{caloriestotal}}</b></label></td>
+						<td id = "macro"><label id="caloriein">Calorie Intake: <b>{{calories}}</b></label></td>
+						<td id = "macro"><label id="calorieout">Calories Remaining: <b>{{recommendedCals}}</b></label></td>
+					</tr>
+					<tr>
+						<td id = "macro"><label id = "protein">Base Protein Goal: <b>{{proteintotal}}</b></label></td>
+						<td id = "macro"><label id="proteinin">Protein Intake: <b>{{proteins}}</b></label></td>
+						<td id = "macro"><label id="proteinout">Protein Remaining: <b>{{recommendedPro}}</b></label></td>
+					</tr>
+					<tr>
+						<td id = "macro"><label id = "carbs">Base Carbs Goal: <b>{{carbsintake}}</b></label></td>
+						<td id = "macro"><label id="carbin">Carbs Intake: <b>{{carbs}}</b></label></td>
+						<td id = "macro"><label id="carbout">Carbs Remaining: <b>{{recommendedCarbs}}</b></label></td>
+					</tr>
+					<tr>
+						<td id = "macro"><label id = "fats">Base Fats Goal: <b>{{fatintake}}</b></label></td>
+						<td id = "macro"><label id="fatin">Fat Intake: <b>{{fats}}</b></label></td>
+						<td id = "macro"><label id="fatout">Fats Remaining: <b>{{recommendedFats}}</b></label></td>
+					</tr>	
+			    </table>
+				</td>
+			</tr>
+			<tr>
+				<td id = "data" >
+				<table id="menu">
+					<tr> 
+						<td> 
+							<h2>Workout Tracker</h2>
+						</td>
+						<td> 
+							<h2>Macro Tracker</h2>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a id="workouttracker" href="{{url_for ('workout_tracker')}}"> 
+								<img id = "image"src= "/static/Images/workouttracker.png" width = "60%" height = "auto"></img>
+							</a>
+						</td>
+						<td>
+							<a id="macrotracker" href="{{url_for ('macro_tracker')}}"> 
+								<img id = "image" src= "/static/Images/macrotracker.png" width = "60%" height = "auto"></img>
+							</a>
+						</td>
+					</tr>
+					<tr> 
+						<td> 
+							<h2>Macro Information</h2>
+						</td>
+						<td> 
+							<h2>Workout Information</h2>
+						</td>
+					</tr>				
+					<tr>				
+						<td>
+							<a id="Foodinfo" href="{{url_for ('macro_info')}}"> 
+								<img id = "image" src= "/static/Images/infomacro.png" width = "60%" height = "auto"></img>
+							</a>
+						</td>
+						<td>
+							<a id="macrotracker" href="{{url_for ('workout_info')}}"> 
+								<img id = "image" src= "/static/Images/infoworkout.png" width = "60%" height = "auto"></img>
+							</a>
+						</td>
+					</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+		</div>
+	</body>
+</html>
