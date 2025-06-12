@@ -689,7 +689,6 @@ def edit_workout():
         return which4()
     else:
         which_button = request.form.get("submit")
-        print(which_button)
         match(which_button):
             case "delete":
                 file = request.form.get("whichfile")
@@ -737,9 +736,14 @@ def edit_workout():
                         status2 = "nothing"
                         return which4()
                     else:
-                        admin = open(file, "a")
-                        admin.write( info + "\n")
+                        admin = open(file, "r")
+                        adminvalue = admin.read().splitlines()
+                        admin.value.append(info)
                         admin.close()
+                        admin2 = open(file, "w")
+                        for i in range(0,len(adminvalue)):
+                            admin2.write(adminvalue[i] + "\n")
+                        admin2.close
                         return redirect(url_for('edit_workout'))
             case "delete_video":
                 line = request.form.get("delete_video")
