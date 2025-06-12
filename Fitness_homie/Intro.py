@@ -600,14 +600,14 @@ def edit_food():
                         check1 = list(line)
                         for i in range(len(check1)):
                             check2 = ord(check1[i])
-                            if check2 < 48 or check2 > 57:
+                            if check2 < 49 or check2 > 57:
                                 status = "number"
                                 return which3()
                         admin = open(file, "r")
                         adminvalue = admin.read().splitlines()
                         admin.close()
                         which_line = int(line)
-                        if which_line > len(adminvalue):
+                        if which_line > len(adminvalue) -1:
                             status = "long"
                             return which3()
                         else: 
@@ -652,7 +652,7 @@ def edit_food():
                     adminvalue = admin.read().splitlines()
                     admin.close
                     number = int(line)
-                    if number > len(adminvalue):
+                    if number > len(adminvalue) -1:
                         status = "long"
                         return which3()
                     else:
@@ -705,14 +705,14 @@ def edit_workout():
                         check1 = list(line)
                         for i in range(len(check1)):
                             check2 = ord(check1[i])
-                            if check2 < 48 or check2 > 57:
+                            if check2 < 49 or check2 > 57:
                                 status2 = "number"
                                 return which4()
                         admin = open(file, "r")
                         adminvalue = admin.read().splitlines()
                         admin.close()
                         which_line = int(line)
-                        if which_line > len(adminvalue):
+                        if which_line > len(adminvalue) -1:
                             status2 = "long"
                             return which4()
                         else: 
@@ -757,7 +757,7 @@ def edit_workout():
                     adminvalue = admin.read().splitlines()
                     admin.close
                     number = int(line)
-                    if number > len(adminvalue):
+                    if number > len(adminvalue) -1:
                         status2 = "long"
                         return which4()
                     else:
