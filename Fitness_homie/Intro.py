@@ -743,7 +743,7 @@ def edit_workout():
                         admin2 = open(file, "w")
                         for i in range(0,len(adminvalue)):
                             admin2.write(adminvalue[i] + "\n")
-                        admin2.close
+                        admin2.close()
                         return redirect(url_for('edit_workout'))
             case "delete_video":
                 line = request.form.get("delete_video")
